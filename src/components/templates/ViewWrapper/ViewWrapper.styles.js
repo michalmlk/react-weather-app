@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 export const ViewWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.background__dark};
   width: 100%;
-  padding: 30px;
-  border-radius: 15px;
+  border-radius: 8px;
   max-width: 768px;
   margin: 20px;
+  box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.2);
 `;

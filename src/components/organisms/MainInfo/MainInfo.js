@@ -1,21 +1,28 @@
-import React, { useContext } from 'react'
-import { Header } from '../../atoms/Header/Header.styles'
-import { WeatherDataContext } from '../../../providers/WeatherDataProvider'
+import React, { useContext } from 'react';
+import { Header } from '../../atoms/Header/Header.styles';
+import { WeatherDataContext } from '../../../providers/WeatherDataProvider';
 import { convertFarenheitToCelcius } from "../../../utils/utils";
-import { StyledWeatherDetails, StyledMainInfo } from './MainInfo.styles';
+import { StyledWeather, StyledDetails} from './MainInfo.styles';
+import {ViewWrapper} from "../../templates/ViewWrapper/ViewWrapper.styles";
 
 const MainInfo = () => {
   const { weatherData } = useContext(WeatherDataContext);
-  console.log(weatherData)
+    console.log(weatherData)
   return (
-    <StyledMainInfo>
-      <Header>{weatherData?.name}</Header>
-      <StyledWeatherDetails>
+    <ViewWrapper>
+      <StyledWeather>
+          <Header>{weatherData?.name}</Header>
           <div>{convertFarenheitToCelcius(weatherData?.main.temp)}</div>
         <img src={`http://openweathermap.org/img/w/${weatherData?.weather[0].icon}.png`} alt="weather_icon"/>
         <p>{weatherData?.weather[0].main}</p>
-      </StyledWeatherDetails>
-    </StyledMainInfo>
+          <StyledDetails>
+              <p>Feels like: {convertFarenheitToCelcius(weatherData?.main.feels_like)}</p>
+              <p>Pressure: {weatherData?.main.pressure} hPa</p>
+              <p>Wind: {weatherData?.wind.speed}</p>
+              <p>Humidity: {weatherData?.main.humidity}</p>
+          </StyledDetails>
+      </StyledWeather>
+    </ViewWrapper>
   )
 }
 
