@@ -16,7 +16,7 @@ export const StyledWeather = styled.div`
   padding: 1.2rem 2rem;
   min-height: 300px;
   grid-template-columns: 75% 25%;
-  grid-template-rows: 22% 8% 25% 45%;
+  grid-template-rows: 25% 10% 25% 40%;
   grid-template-areas: "city icon"
                        "desc icon"
                        "temp .   "

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { ViewWrapper } from '../../templates/ViewWrapper/ViewWrapper.styles'
 
 export const StyledForecastWrapper = styled(ViewWrapper)`
-  min-width: 180px;
+  max-width: 180px;
   height: 240px;
   display: grid;
   grid-template-rows: 20% 35% 25% 10% 10%;
@@ -16,6 +16,7 @@ export const StyledForecastWrapper = styled(ViewWrapper)`
   align-items: center;
   color: ${({ theme }) => theme.colors.white};
   padding: 1rem;
+  
 
   h2 {
     grid-area: date;

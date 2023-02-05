@@ -1,8 +1,14 @@
 import styled from 'styled-components'
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 
-export const ForecastWrapper = styled.div`
+export const ForecastWrapper = styled(Splide)`
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  max-width: 768px;
+  max-width: 840px !important;
+  justify-content: center;
 `
+
+export const StyledSplideSlide = styled(SplideSlide)`
+  display: flex;
+  justify-content: center;
+`;
