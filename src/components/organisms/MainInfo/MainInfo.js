@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Header } from '../../atoms/Header/Header.styles';
-import { WeatherDataContext } from '../../../providers/WeatherDataProvider';
 import { convertFarenheitToCelcius } from "../../../utils/utils";
 import { StyledWeather, StyledDetails} from './MainInfo.styles';
 import {ViewWrapper} from "../../templates/ViewWrapper/ViewWrapper.styles";
 
-const MainInfo = () => {
-  const { weatherData } = useContext(WeatherDataContext);
-    console.log(weatherData)
+const MainInfo = ({weatherData}) => {
   return (
     <ViewWrapper>
       <StyledWeather>
@@ -18,8 +15,8 @@ const MainInfo = () => {
           <StyledDetails>
               <p>Feels like: {convertFarenheitToCelcius(weatherData?.main.feels_like)}</p>
               <p>Pressure: {weatherData?.main.pressure} hPa</p>
-              <p>Wind: {weatherData?.wind.speed}</p>
-              <p>Humidity: {weatherData?.main.humidity}</p>
+              <p>Wind: {weatherData?.wind.speed} m/s</p>
+              <p>Humidity: {weatherData?.main.humidity} %</p>
           </StyledDetails>
       </StyledWeather>
     </ViewWrapper>
