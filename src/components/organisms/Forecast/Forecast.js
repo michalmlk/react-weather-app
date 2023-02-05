@@ -19,8 +19,8 @@ const Forecast = ({ data }) => {
     }}>
         {dailyData.map((e) => {
           return (
-            <StyledSplideSlide>
-              <ForecastItem data={e} key={e.dt} />
+            <StyledSplideSlide key={e.dt}>
+              <ForecastItem data={e} />
             </StyledSplideSlide>
           )
         })}
