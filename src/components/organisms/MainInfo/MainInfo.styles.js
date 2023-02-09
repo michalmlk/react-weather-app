@@ -16,10 +16,10 @@ export const StyledWeather = styled.div`
   padding: 1.2rem 2rem;
   min-height: 300px;
   grid-template-columns: 75% 25%;
-  grid-template-rows: 25% 10% 25% 40%;
+  grid-template-rows: 25% 25% 10% 40%;
   grid-template-areas: "city icon"
-                       "desc icon"
-                       "temp .   "
+                       "temp icon"
+                       "desc .   "
                        "details .";
   
   ${Header} {
@@ -40,12 +40,12 @@ export const StyledWeather = styled.div`
     text-align: left;
     font-size: ${({theme}) => theme.fontSize.m};
     margin: 0;
-    color: #ffff;
+    color: ${({theme}) => theme.colors.dark};
   }
   
   div {
     font-size:${({theme}) => theme.fontSize.xxl};
-    color: #ffff;
+    color: ${({theme}) => theme.colors.dark};
     grid-area: temp;
   }
   

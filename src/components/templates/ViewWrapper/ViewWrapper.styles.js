@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ViewWrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.background__dark};
+  background-color: ${({ theme }) => theme.colors.background};
   width: 100%;
   border-radius: 8px;
   max-width: 768px;

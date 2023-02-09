@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import WeatherDataProvider from '../../../providers/WeatherDataProvider'
 import MainInfo from '../../organisms/MainInfo/MainInfo'
 import Search from '../../organisms/Search/Search'
 import Forecast from '../../organisms/Forecast/Forecast'
@@ -30,10 +29,10 @@ export const Homepage = () => {
   }
 
   return (
-    <WeatherDataProvider>
+    <>
       <Search onSearchChange={handleChange} />
-      <MainInfo weatherData={weatherData} />
-      {forecastData ? <Forecast data={forecastData} /> : ''}
-    </WeatherDataProvider>
+      {weatherData ? <MainInfo weatherData={weatherData} /> : <h1>Type your city</h1>}
+      {forecastData && <Forecast data={forecastData} />}
+    </>
   )
 }

@@ -14,7 +14,7 @@ export const StyledForecastWrapper = styled(ViewWrapper)`
     'press press'
     'hum hum';
   align-items: center;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.dark};
   padding: 1rem;
   
 

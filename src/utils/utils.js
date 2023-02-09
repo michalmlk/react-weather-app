@@ -2,8 +2,8 @@ export const convertFarenheitToCelcius = (tempInF) => {
   return `${(tempInF - 273.15).toFixed(1)}°C`
 }
 
-export const formatDate = (ts) => {
-  return ts.substr(5, 5).split('-').reverse().join('.')
+export const getHourFromDate = (ts) => {
+  return ts.substr(11, 5)
 }
 
 export const getTommorow = () => {
