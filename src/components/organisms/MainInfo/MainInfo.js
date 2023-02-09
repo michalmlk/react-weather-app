@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from '../../atoms/Header/Header.styles';
 import { convertFarenheitToCelcius } from "../../../utils/utils";
 import { StyledWeather, StyledDetails} from './MainInfo.styles';
-import {ViewWrapper} from "../../templates/ViewWrapper/ViewWrapper.styles";
+import { ViewWrapper } from "../../templates/ViewWrapper/ViewWrapper.styles";
 
 const MainInfo = ({weatherData}) => {
   return (
