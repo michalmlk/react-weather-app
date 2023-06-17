@@ -4,7 +4,7 @@ export const theme = {
     secondary: '#098aef',
     background: '#f6f6f6',
     dark: '#3d3d3d',
-    white: '#ffffff'
+    white: '#ffffff',
   },
 
   fontSize: {
@@ -13,6 +13,6 @@ export const theme = {
     m: '18px',
     l: '22px',
     xl: '32px',
-    xxl: '64px'
+    xxl: '64px',
   },
 }

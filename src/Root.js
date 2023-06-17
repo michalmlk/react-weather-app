@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { theme } from './assets/theme/theme'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Homepage } from './components/views/Homepage/Homepage'
 
 const Wrapper = styled.div`
@@ -16,16 +15,11 @@ const Wrapper = styled.div`
 
 const Root = () => {
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <Routes>
-              <Route path="/" element={<Navigate to="/homepage" />} />
-              <Route path="/homepage" element={<Homepage />} />
-          </Routes>
-        </Wrapper>
-      </ThemeProvider>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Homepage />
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
