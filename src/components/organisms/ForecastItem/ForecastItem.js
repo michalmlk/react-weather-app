@@ -1,8 +1,9 @@
 import React from 'react'
 import { getHourFromDate, convertFarenheitToCelcius } from '../../../utils/utils'
 import { StyledForecastWrapper } from './ForecastItem.styles'
+import { languages } from '../../../utils/translations'
 
-const ForecastItem = ({ data }) => {
+const ForecastItem = ({ data, selectedLanguage }) => {
   return (
     <StyledForecastWrapper>
       <h2>{getHourFromDate(data.dt_txt)}</h2>
@@ -11,8 +12,12 @@ const ForecastItem = ({ data }) => {
       </div>
       <p>{convertFarenheitToCelcius(data.main.temp)}</p>
       <p>{data.weather[0].main}</p>
-      <p>Humidity: {data.main.humidity}%</p>
-      <p>Pressure: {data.main.pressure} hPa</p>
+      <p>
+        {languages[`${selectedLanguage}`].humidity}: {data.main.humidity}%
+      </p>
+      <p>
+        {languages[`${selectedLanguage}`].pressure}: {data.main.pressure} hPa
+      </p>
     </StyledForecastWrapper>
   )
 }
