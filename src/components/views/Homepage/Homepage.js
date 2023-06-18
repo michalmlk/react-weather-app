@@ -11,6 +11,12 @@ export const Homepage = () => {
   const [forecastData, setForecastData] = useState(null)
   const [selectedLanguage, setSelectedLanguage] = useState('pl')
 
+  const handleLanguageSelect = (e, newLanguage) => {
+    if (newLanguage) {
+      setSelectedLanguage(newLanguage)
+    }
+  }
+
   const handleChange = (data) => {
     const [lat, lon] = data.value.split(' ')
 
@@ -35,12 +41,7 @@ export const Homepage = () => {
   return (
     <>
       <Search onSearchChange={handleChange} />
-      <ToggleButtonGroup
-        value={selectedLanguage}
-        exclusive
-        onChange={(e, newLan) => setSelectedLanguage(newLan)}
-        aria-label='text alignment'
-      >
+      <ToggleButtonGroup value={selectedLanguage} exclusive onChange={handleLanguageSelect} aria-label='text alignment'>
         <ToggleButton value='pl' aria-label='left aligned'>
           PL
         </ToggleButton>
@@ -48,7 +49,7 @@ export const Homepage = () => {
           EN
         </ToggleButton>
       </ToggleButtonGroup>
-      {weatherData ? (
+      {weatherData && selectedLanguage ? (
         <MainInfo weatherData={weatherData} selectedLanguage={selectedLanguage} />
       ) : (
         <h1>{languages[`${selectedLanguage}`].typeYourCity}</h1>
